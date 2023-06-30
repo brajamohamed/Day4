@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      let array = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15];
+      let result = [];
+
+      function primeNums(array) {
+        array.forEach((num) => {
+          let flag = true;
+          if (num < 2) {
+            flag = false;
+          } else {
+            for (let i = 2; i <= Math.sqrt(num); i++) {
+              if (num % i === 0) {
+                flag = false;
+              }
+            }
+          }
+          if (flag === true) {
+            result.push(num);
+          }
+        });
+      }
+
+      primeNums(array);
+      console.log(result);
+    </script>
+  </body>
+</html>
